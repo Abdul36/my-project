@@ -1,19 +1,19 @@
 import React from "react";
 import Multiple from "./cardss"; // Assuming you have renamed the import from "./cardss" to "./Multiple"
-
 const gradientStyle = {
   background: 'linear-gradient(62.44deg, #1D0CB6 -42.93%, #7466F5 -42.92%, #B480FF 47.91%, #F0B3FF 138.75%)',
 };
+
 const Cards = () => {
   // Assuming the budget percentage is 30% as per your example
   const budgetPercentage = 30;
 
   return (
-    <div className="flex items-start justify-between">
+    <div className="flex flex-col lg:flex-row items-start justify-between">
       {/* Card Container */}
-      <div className="w-1/3 bg-purple-500 rounded-lg overflow-hidden shadow-lg mt-8"  style={gradientStyle}> 
+      <div className="w-full lg:w-1/3 bg-purple-500 rounded-lg overflow-hidden shadow-lg mt-8" style={gradientStyle}>
         {/* Card header */}
-        <div className=" text-white px-6 py-4">
+        <div className="text-white px-6 py-4">
           <div className="flex items-center">
             <h1 className="text-xl font-semibold font-chillax">moola</h1>
             <p className="ml-auto">Last update: 5 mins ago</p>
@@ -32,7 +32,7 @@ const Cards = () => {
               <p className="text-white">Cardholder Name</p>
               <h4 className="font-semibold text-white">JENNIFER SMITH</h4>
             </div>
-            <div className="ms-10">
+            <div className="ml-10">
               <p className="text-white">Expiry Date</p>
               <h4 className="font-semibold text-white">02/27</h4>
             </div>
@@ -46,7 +46,7 @@ const Cards = () => {
             </div>
             <div className="w-full bg-gray-200 rounded-full overflow-hidden shadow-lg">
               {/* Progress bar */}
-              <div className="bg-gray-200  h-2 rounded-full">
+              <div className="bg-gray-200 h-2 rounded-full">
                 <div
                   className="bg-sky-400 h-full rounded-full"
                   style={{ width: `${budgetPercentage}%` }}
@@ -57,7 +57,7 @@ const Cards = () => {
         </div>
       </div>
       {/* Multiple Cards Container */}
-      <div className="w-2/3 ml-4">
+      <div className="w-full lg:w-2/3 lg:ml-4 mt-4 lg:mt-0">
         <Multiple />
       </div>
     </div>

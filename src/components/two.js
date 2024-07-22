@@ -21,11 +21,11 @@ const Two = () => {
   };
 
   return (
-    <div className="flex items-center">
-      <div className="w-1/2 p-4">
+    <div className="flex flex-col lg:flex-row items-center">
+      <div className="w-full lg:w-1/2 p-4">
         <div className="flex justify-between items-center mb-4">
-          <div className="text-xl font-bold">Financial Health Index</div>
-          <div className="text-xl flex items-center relative">
+          <div className="text-lg lg:text-xl font-bold">Financial Health Index</div>
+          <div className="text-lg lg:text-xl flex items-center relative">
             <div className="mr-2">{selectedOption}</div>
             <TiArrowSortedDown
               className={`inline-block cursor-pointer ${
@@ -67,7 +67,7 @@ const Two = () => {
         </div>
         <LineChart />
       </div>
-      <div className="w-1/2 p-4">
+      <div className="w-full lg:w-1/2 p-4">
         <RadialBarChart />
       </div>
     </div>
