@@ -45,9 +45,9 @@ const TableComponent = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-3">
         <div>
-          <h2>Recent Transactions</h2>
+          <h2 className="text-lg font-bold">Recent Transactions</h2>
         </div>
         <div>
           <h4 onClick={() => setShowAll(!showAll)} className="cursor-pointer text-blue-500">
