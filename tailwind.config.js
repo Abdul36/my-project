@@ -10,10 +10,10 @@ module.exports = {
         chillax: ['Chillax', 'sans-serif'],
       },
       fontSize: {
-        'custom-large': '85.73px',
+        'custom-large': '38px',
       },
       lineHeight: {
-        'custom-large': '132.16px',
+        // 'custom-large': '132.16px',
       },
       letterSpacing: {
         'custom': '-0.08em',

@@ -22,19 +22,20 @@ const BarChart = () => {
       formatter: function (val) {
         return `$${val.toFixed(0)}`; // Format the value as dollars
       },
-      offsetY: -25, // Move labels above the bars
+      offsetY: 40, // Move labels above the bars
       style: {
-        fontSize: '12px',
-        colors: ['#000'], // Color of the data labels
+        fontSize: "12px",
+        colors: ["green","red"], // Color of the data labels
       },
+      
     },
     xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
       labels: {
         show: true, // Show x-axis labels
         style: {
-          colors: '#000', // Color of x-axis labels
-          fontSize: '12px',
+          colors: "#000", // Color of x-axis labels
+          fontSize: "12px",
         },
       },
       axisTicks: {
@@ -51,19 +52,19 @@ const BarChart = () => {
         },
       },
     },
-    colors: ['#28a745', '#dc3545'], // Colors for each series
+    colors: ["#28a745", "#dc3545"], // Colors for each series (Green for Value 1, Red for Value 2)
     grid: {
-      borderColor: '#f1f1f1',
+      borderColor: "#f1f1f1",
     },
     stroke: {
       curve: "smooth",
     },
     fill: {
-      type: 'gradient',
+      type: "gradient",
       gradient: {
-        shade: 'light',
-        type: 'vertical', // Change to 'horizontal' if needed
-        gradientToColors: ['#A5F3CF', '#F8A6A0'], // Gradients applied to all bars
+        shade: "light",
+        type: "vertical", // Change to 'horizontal' if needed
+        gradientToColors: ["#A5F3CF", "#F8A6A0"], // Gradients applied to all bars
         shadeIntensity: 1,
         opacityFrom: 1,
         opacityTo: 0,
@@ -76,13 +77,16 @@ const BarChart = () => {
   };
 
   // Sample series data with two values per month
-  const series = [{
-    name: 'Value 1',
-    data: [255, 305, 240, 290, 140, 105], // Example values for first series
-  }, {
-    name: 'Value 2',
-    data: [200, 325, 210, 310, 170, 240], // Example values for second series
-  }];
+  const series = [
+    {
+      name: "Value 1",
+      data: [255, 305, 240, 290, 140, 105], // Example values for first series
+    },
+    {
+      name: "Value 2",
+      data: [200, 325, 210, 310, 170, 240], // Example values for second series
+    },
+  ];
 
   return (
     <div className="bar-chart">

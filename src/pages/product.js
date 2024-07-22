@@ -59,7 +59,7 @@ const Product = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 py-5 px-[40px] h-screen bg-pink-100 ml-72 overflow-y-auto">
+      <div className="flex-1 py-5 px-[40px] h-screen bg-pink-50 ml-72 overflow-y-auto">
         <Header />
         <Cards />
         <Two />

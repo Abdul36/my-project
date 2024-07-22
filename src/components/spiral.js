@@ -6,7 +6,7 @@ class RadialBarChart extends React.Component {
     super(props);
 
     this.state = {
-      series: [82, 76, 67, 61, 90], // Move series out of options
+      series: [60, 76, 67, 61, 80], // Move series out of options
       options: {
         chart: {
           height: 390,
