@@ -15,8 +15,8 @@ class RadialBarChart extends React.Component {
         plotOptions: {
           radialBar: {
             offsetY: 0,
-            startAngle: 0,
-            endAngle: 360,
+            startAngle: 0, // Start angle adjusted to -90 degrees
+            endAngle:360 ,   // End angle adjusted to complete the circle
             hollow: {
               margin: 5,
               size: '30%',
