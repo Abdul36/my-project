@@ -1,0 +1,87 @@
+import React, { useState } from 'react';
+import { TbTrain } from 'react-icons/tb';
+import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import './Multiple.css'; // Import CSS file for styling
+
+const Multiple = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const toggleMenu = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null); // Close the menu if clicking on the same card
+    } else {
+      setOpenIndex(index); // Open the clicked card's menu
+    }
+  };
+
+  const handleViewAll = () => {
+    setShowAll(!showAll); // Toggle the showAll state
+  };
+
+  const cards = [...Array(20)]; // Array to hold the cards
+  const visibleCards = showAll ? cards : cards.slice(0, 6); // Show all cards if showAll is true, else show first 6
+
+  return (
+    <section>
+      <div className="overflow-auto h-96 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-10">
+        <div className='flex pt-[55px] justify-between'>
+          <div>
+            <h1>Pockets</h1>
+          </div>
+          <div onClick={handleViewAll} className="cursor-pointer text-blue-500">
+            {showAll ? 'View Less' : 'View All'}
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 pt-10">
+          {/* Render visible cards */}
+          {visibleCards.map((_, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md relative">
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <TbTrain size={30} color="green" />
+                    <div className="ml-2">Transport</div>
+                  </div>
+                  <div>
+                    <HiOutlineDotsHorizontal
+                      size={30}
+                      color="gray"
+                      onClick={() => toggleMenu(index)} // Pass index for each card
+                      style={{ cursor: 'pointer' }}
+                    />
+                    {openIndex === index && (
+                      <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-10">
+                        <div className="text-gray-800 hover:bg-gray-200 py-2 px-4 cursor-pointer">
+                          Action 1
+                        </div>
+                        <div className="text-gray-800 hover:bg-gray-200 py-2 px-4 cursor-pointer">
+                          Action 2
+                        </div>
+                        <div className="text-gray-800 hover:bg-gray-200 py-2 px-4 cursor-pointer">
+                          Action 3
+                        </div>
+                        <div className="text-gray-800 hover:bg-gray-200 py-2 px-4 cursor-pointer">
+                          Action 4
+                        </div>
+                        <div className="text-gray-800 hover:bg-gray-200 py-2 px-4 cursor-pointer">
+                          Action 5
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-end pt-5">$47000</h1>
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* End of repeated structure */}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Multiple;

@@ -1,0 +1,85 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f4f4f4;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4; /* Same background color as th */
+}
+
+.positive-value {
+    color: green;
+}
+
+.negative-value {
+    color: red;
+}
+
+.pocket-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 10px; /* Same as indicator radius */
+}
+
+.pocket-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.pocket-credit {
+    background-color: #4caf50; /* Green for Credit */
+    color: #4caf50;
+}
+
+.pocket-dining {
+    background-color: #6372EB; /* Orange for Dining */
+    color: #6372EB;
+}
+
+.pocket-travel {
+    background-color: #FEBF2D; /* Blue for Travel */
+    color: #FEBF2D;
+}
+
+.pocket-debit {
+    background-color: #f44336; /* Red for Debit */
+    color: #f44336;
+}
+
+/* Add shaded backgrounds */
+.pocket-credit-shaded {
+    background-color: #ECFDF3; /* Shaded green */
+}
+
+.pocket-dining-shaded {
+    background-color: #E8EAFC; /* Shaded orange */
+}
+
+.pocket-travel-shaded {
+    background-color: #FFF7E6; /* Shaded blue */
+}
+
+.pocket-debit-shaded {
+    background-color: #FEF3F2; /* Shaded red */
+}
+
+/* Change text color for specific columns */
+.date-column,
+.moola-column,
+.account-column {
+    color: #64698E;
+}

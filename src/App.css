@@ -1,3 +1,9 @@
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
 .App {
   text-align: center;
 }
@@ -35,4 +41,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Custom CSS with Tailwind colors */
+.custom-background {
+  background: linear-gradient(62.44deg, #1D0CB6 -42.93%, #7466F5 -42.92%, #B480FF 47.91%, #F0B3FF 138.75%);
+}
+
+.custom-purple-background {
+  background-color: #6C33BF99;
+}
+/* styles.css or your CSS file */
+.gradient-background {
+  background: linear-gradient(99.15deg, #6200EE 61.91%, #9F3AC9 75.3%, #F98F93 95.39%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
