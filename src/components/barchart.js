@@ -7,40 +7,40 @@ const BarChart = () => {
       type: "bar",
       height: 350,
       toolbar: {
-        show: false, // Hide toolbar
+        show: false, 
       },
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "70%", // Adjust the width of the bars
+        columnWidth: "70%", 
         endingShape: "rounded",
       },
     },
     dataLabels: {
       enabled: true,
       formatter: function (val) {
-        return `$${val.toFixed(0)}`; // Format the value as dollars
+        return `$${val.toFixed(0)}`; 
       },
-      offsetY: -10, // Move labels inside the bars
+      offsetY: -10, 
       style: {
         fontSize: "12px",
-        colors: ["#28a745", "#dc3545"], // Color of the data labels for each series
-        fontFamily: "Inter, sans-serif", // Font family for data labels
+        colors: ["#28a745", "#dc3545"], 
+        fontFamily: "Inter, sans-serif", 
       },
     },
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
       labels: {
-        show: true, // Show x-axis labels
+        show: true, 
         style: {
-          colors: "#000", // Color of x-axis labels
+          colors: "#000", 
           fontSize: "12px",
-          fontFamily: "Inter, sans-serif", // Added fontFamily
+          fontFamily: "Inter, sans-serif", 
         },
       },
       axisTicks: {
-        show: true, // Show axis ticks
+        show: true, 
       },
     },
     yaxis: {
@@ -49,14 +49,14 @@ const BarChart = () => {
       tickAmount: 7,
       labels: {
         formatter: function (val) {
-          return `$${val.toFixed(0)}`; // Format y-axis labels as dollars
+          return `$${val.toFixed(0)}`; 
         },
         style: {
-          fontFamily: "Inter, sans-serif", // Added fontFamily
+          fontFamily: "Inter, sans-serif", 
         },
       },
     },
-    colors: ["#28a745", "#dc3545"], // Green for Value 1, Red for Value 2
+    colors: ["#28a745", "#dc3545"], 
     grid: {
       borderColor: "#f1f1f1",
     },
@@ -67,28 +67,28 @@ const BarChart = () => {
       type: "gradient",
       gradient: {
         shade: "light",
-        type: "vertical", // Change to 'horizontal' if needed
-        gradientToColors: ["#A5F3CF", "#F8A6A0"], // Gradients applied to all bars
+        type: "vertical", 
+        gradientToColors: ["#A5F3CF", "#F8A6A0"], 
         shadeIntensity: 1,
         opacityFrom: 1,
         opacityTo: 0,
-        stops: [0, 100], // Gradient stops
+        stops: [0, 100], 
       },
     },
     legend: {
-      show: false, // Hide legend
+      show: false,
     },
   };
 
-  // Sample series data with two values per month
+
   const series = [
     {
       name: "Value 1",
-      data: [255, 305, 240, 290, 140, 105], // Example values for first series
+      data: [255, 305, 240, 290, 140, 105], 
     },
     {
       name: "Value 2",
-      data: [200, 325, 210, 310, 170, 240], // Example values for second series
+      data: [200, 325, 210, 310, 170, 240], 
     },
   ];
 

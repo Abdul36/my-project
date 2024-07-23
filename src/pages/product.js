@@ -56,9 +56,12 @@ const Product = () => {
             <MenuItem icon={<FaHome className="text-lg whitespace-nowrap" />} text="Change" />
             <MenuItem icon={<FaHome className="text-lg whitespace-nowrap" />} text="Waterfall" />
             <MenuItem icon={<CiBank className="text-lg whitespace-nowrap" />} text="Money 101" />
-            <MenuItem icon={<IoIosSettings className="text-lg whitespace-nowrap" />} text="Settings" />
+          
 
           </div>
+          <div className="mt-auto">
+      <MenuItem icon={<IoIosSettings className="text-lg whitespace-nowrap" />} text="Settings" />
+    </div>
         </div>
       </div>
 
