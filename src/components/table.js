@@ -20,64 +20,33 @@ const TableComponent = () => {
     return <span className={amountClass}>{amount}</span>;
   };
 
-  // // Function to get the CSS class for each pocket type
-  // const getPocketClass = (pocket) => {
-  //   switch (pocket) {
-  //     case 'Credit':
-  //       return 'pocket-credit';
-  //     case 'Dining':
-  //       return 'pocket-dining';
-  //     case 'Travel':
-  //       return 'pocket-travel';
-  //     case 'Debit':
-  //       return 'pocket-debit';
-  //     default:
-  //       return '';
-  //   }
-  // };
   // Function to get the style for each pocket type
-const getPocketClass = (pocket) => {
-  switch (pocket) {
-    case 'Credit':
-      return { color: '#007bff', backgroundColor: '#e7f0ff' }; // Blue text, light blue background
-    case 'Dining':
-      return { color: '#fd7e14', backgroundColor: '#fff4e5' }; // Orange text, light orange background
-    case 'Travel':
-      return { color: '#20c997', backgroundColor: '#e6fffa' }; // Teal text, light teal background
-    case 'Debit':
-      return { color: '#dc3545', backgroundColor: '#f8d7da' }; // Red text, light red background
-    default:
-      return { color: 'black', backgroundColor: 'transparent' }; // Default styles
-  }
-};
+  const getPocketClass = (pocket) => {
+    switch (pocket) {
+      case 'Credit':
+        return { color: '#007bff', backgroundColor: '#e7f0ff' }; // Blue text, light blue background
+      case 'Dining':
+        return { color: '#fd7e14', backgroundColor: '#fff4e5' }; // Orange text, light orange background
+      case 'Travel':
+        return { color: '#20c997', backgroundColor: '#e6fffa' }; // Teal text, light teal background
+      case 'Debit':
+        return { color: '#dc3545', backgroundColor: '#f8d7da' }; // Red text, light red background
+      default:
+        return { color: 'black', backgroundColor: 'transparent' }; // Default styles
+    }
+  };
 
   // Sample transactions data
   const transactions = [
     { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
+    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
     { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
-
     // Add more transactions as needed
   ];
 
@@ -113,9 +82,9 @@ const getPocketClass = (pocket) => {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-bold font-clash-display">Recent Transactions</h2>
+          <h2 className="text-lg font-bold font-clash-display mb-2  ">Recent Transactions</h2>
         </div>
         <div className="font-inter">
           <h4 onClick={handleViewAll} className="cursor-pointer text-[#6200EE]">
@@ -123,7 +92,7 @@ const getPocketClass = (pocket) => {
           </h4>
         </div>
       </div>
-      <div className="ag-theme-alpine table-container font-inter" style={{ width: '100%' }}>
+      <div className="ag-theme-alpine table-container font-inter" style={{ height: '34vh', width: '100%' }}>
         <AgGridReact
           rowData={displayedTransactions}
           columnDefs={columns}
