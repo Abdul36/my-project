@@ -50,7 +50,7 @@ const Cards = () => {
         </div>
       </div>
       {/* Multiple Cards Container */}
-      <div className="w-full lg:w-2/3 lg:ml-4 mt-4 lg:mt-0">
+      <div className="w-full lg:w-2/3 p-0 lg:ml-4 mt-3 lg:mt-0">
         <Multiple />
       </div>
     </div>

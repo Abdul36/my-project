@@ -6,7 +6,7 @@ class RadialBarChart extends React.Component {
     super(props);
 
     this.state = {
-      series: [60, 76, 67, 61, 80], // Move series out of options
+      series: [60, 76, 67, 61, 80],
       options: {
         chart: {
           height: 390,
@@ -15,13 +15,12 @@ class RadialBarChart extends React.Component {
         plotOptions: {
           radialBar: {
             offsetY: 0,
-            startAngle: 0, // Start angle adjusted to -90 degrees
-            endAngle:360 ,   // End angle adjusted to complete the circle
+            startAngle: -180,
+            endAngle: 180,
             hollow: {
               margin: 5,
               size: '30%',
               background: 'transparent',
-              image: undefined,
             },
             dataLabels: {
               name: {
@@ -29,33 +28,38 @@ class RadialBarChart extends React.Component {
               },
               value: {
                 show: false,
-              }
+              },
             },
             barLabels: {
               enabled: true,
               useSeriesColors: true,
               offsetX: 8,
               fontSize: '16px',
-              fontFamily: 'Inter, sans-serif', 
-              formatter: function(seriesName, opts) {
-                return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+              fontFamily: 'Inter, sans-serif',
+              formatter: (seriesName, opts) => {
+                return `${seriesName}: ${opts.w.globals.series[opts.seriesIndex]}`;
+              },
+              style: {
+                transform: 'rotate(-90  deg)', 
+                textAlign: 'center',
+                whiteSpace: 'nowrap',
               },
             },
-          }
+          },
         },
-        colors: ['#6372EB', '#23CCF8', '#17B26A', '#FD9A27', '#23CCF8'], // Corrected color typo
+        colors: ['#6372EB', '#23CCF8', '#17B26A', '#FD9A27', '#23CCF8'],
         labels: ['Other $700.98', 'Market $6,500', 'Food $644.22', 'Grocery $450.55', 'Transport $300'],
         annotations: {
           points: [{
-            x: 50, // Adjust X coordinate as needed
-            y: 50, // Adjust Y coordinate as needed
+            x: 50,
+            y: 50,
             marker: {
               size: 0,
             },
             label: {
               borderColor: '#FF4560',
               borderWidth: 1,
-              text: 'Start', // Label text
+              text: 'Start',
               textAnchor: 'middle',
               offsetX: 0,
               offsetY: 10,
@@ -63,18 +67,18 @@ class RadialBarChart extends React.Component {
                 fontSize: '12px',
                 color: '#FF4560',
                 background: 'transparent',
-              }
-            }
-          }]
+              },
+            },
+          }],
         },
         responsive: [{
           breakpoint: 480,
           options: {
             legend: {
-              show: false
-            }
-          }
-        }]
+              show: false,
+            },
+          },
+        }],
       }
     };
   }

@@ -53,7 +53,7 @@ const Multiple = () => {
             {showAll ? 'View Less' : 'View All'}
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-1 gap-y-2 pt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-1 gap-y-2 pt-5">
           {/* Render the specified number of cards */}
           {cardData.slice(0, cardsToShow).map((card, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md relative w-full md:w-70">
