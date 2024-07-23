@@ -37,11 +37,11 @@ const Header = () => {
   const placeholderImageUrl = 'https://picsum.photos/200/200';
 
   return (
-    <div className='flex items-center justify-between py-4 px-6 bg-gray-100 shadow-md'>
+    <div className='flex items-center justify-between py-4 px-6 bg-gray-100 shadow-md font-inter'>
       {/* Left section */}
       <div className='flex items-center'>
-        <p>👋</p>
-        <div className='ml-2'>
+        <p >👋</p>
+        <div className='ml-2 font-inter'>
           <p>Hey! Olive Rye</p>
           <p>No holes in this pocket</p>
         </div>

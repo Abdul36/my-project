@@ -47,9 +47,9 @@ const Multiple = () => {
       <div className="overflow-auto h-96 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-10">
         <div className='flex justify-between pt-[26px]'>
           <div>
-            <h1 className='text-xl font-bold'>Pockets</h1>
+            <h1 className='text-xl font-bold font-clash-display'>Pockets</h1>
           </div>
-          <div onClick={handleViewAll} className="cursor-pointer text-blue-500">
+          <div onClick={handleViewAll} className="cursor-pointer text-[#6200EE] font-clash-display" >
             {showAll ? 'View Less' : 'View All'}
           </div>
         </div>
@@ -61,11 +61,11 @@ const Multiple = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <span className="text-xl">{card.icon}</span>
-                    <div className="ml-2">{card.text}</div>
+                    <div className="ml-2 font-inter">{card.text}</div>
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-end pt-5">{card.price}</h1>
+                <h1 className="text-xl font-bold text-end pt-5 font-clash-display">{card.price}</h1>
                 </div>
               </div>
             </div>

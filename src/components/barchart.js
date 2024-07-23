@@ -22,12 +22,12 @@ const BarChart = () => {
       formatter: function (val) {
         return `$${val.toFixed(0)}`; // Format the value as dollars
       },
-      offsetY: 40, // Move labels above the bars
+      offsetY: -10, // Move labels inside the bars
       style: {
         fontSize: "12px",
-        colors: ["green","red"], // Color of the data labels
+        colors: ["#000"], // Color of the data labels (black)
+        fontFamily: "Inter, sans-serif", // Added fontFamily
       },
-      
     },
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -36,6 +36,7 @@ const BarChart = () => {
         style: {
           colors: "#000", // Color of x-axis labels
           fontSize: "12px",
+          fontFamily: "Inter, sans-serif", // Added fontFamily
         },
       },
       axisTicks: {
@@ -49,6 +50,9 @@ const BarChart = () => {
       labels: {
         formatter: function (val) {
           return `$${val.toFixed(0)}`; // Format y-axis labels as dollars
+        },
+        style: {
+          fontFamily: "Inter, sans-serif", // Added fontFamily
         },
       },
     },

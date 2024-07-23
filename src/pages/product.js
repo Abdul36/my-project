@@ -29,10 +29,10 @@ const Product = () => {
           }}
         />
 
-        <div className="flex flex-col pt-10 p-[50px] overflow-y-auto">
+        <div className="flex flex-col pt-10 p-[50px] overflow-y-auto font-inter">
           <MenuItem icon={<FaHome className="text-lg" />} text="Dashboard" />
           <MenuItem
-            icon={<IoIosCash className="text-lg" />}
+            icon={<IoIosCash className="text-lg bg-white" />}
             text="Transaction"
           />
           <MenuItem
@@ -50,7 +50,7 @@ const Product = () => {
 
         {/* Bottom section */}
         <div className="flex-grow"></div>
-        <div className="mt-auto pb-5 p-[50px]">
+        <div className="mt-auto pb-5 p-[50px] font-inter">
           <MenuItem
             icon={<IoIosSettings className="text-lg" />}
             text="Settings"

@@ -29,35 +29,102 @@ const TableComponent = () => {
   };
 
   const transactions = [
-    { date: "01-14-2024", moola: "Uber Eats", amount: "+$1,400.77", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "-$100.67", pocket: "Dining", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$350.06", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Uber Eats", amount: "-$150.00", pocket: "Debit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "-$500.50", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Uber Eats", amount: "+$1,400.77", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change", amount: "-$100.67", pocket: "Dining", account: "Main" },
-    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$350.06", pocket: "Credit", account: "Main" },
-    { date: "01-14-2024", moola: "Uber Eats", amount: "-$150.00", pocket: "Debit", account: "Main" },
+    {
+      date: "01-14-2024",
+      moola: "Uber Eats",
+      amount: "+$1,400.77",
+      pocket: "Credit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change",
+      amount: "-$100.67",
+      pocket: "Dining",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change Saved!",
+      amount: "+$350.06",
+      pocket: "Credit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Uber Eats",
+      amount: "-$150.00",
+      pocket: "Debit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change",
+      amount: "-$70.25",
+      pocket: "Travel",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change Saved!",
+      amount: "-$500.50",
+      pocket: "Credit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Uber Eats",
+      amount: "+$1,400.77",
+      pocket: "Credit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change",
+      amount: "-$100.67",
+      pocket: "Dining",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Spare Change Saved!",
+      amount: "+$350.06",
+      pocket: "Credit",
+      account: "Main",
+    },
+    {
+      date: "01-14-2024",
+      moola: "Uber Eats",
+      amount: "-$150.00",
+      pocket: "Debit",
+      account: "Main",
+    },
   ];
 
-  const displayedTransactions = showAll ? transactions : transactions.slice(0, 5);
+  const displayedTransactions = showAll
+    ? transactions
+    : transactions.slice(0, 5);
 
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h2 className="text-lg font-bold">Recent Transactions</h2>
+          <h2 className="text-lg font-bold font-clash-display">
+            Recent Transactions
+          </h2>
         </div>
-        <div>
-          <h4 onClick={() => setShowAll(!showAll)} className="cursor-pointer text-blue-500">
+        <div className="font-inter">
+          <h4
+            onClick={() => setShowAll(!showAll)}
+            className="cursor-pointer text-[#6200EE]"
+          >
             {showAll ? "View Less" : "View All"}
           </h4>
         </div>
       </div>
-      <div className="overflow-auto h-80 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+      <div className="overflow-auto h-80 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 font-inter">
         <table className="styled-table min-w-full">
-          <thead>
+          <thead className="text-[14px] font-medium">
             <tr>
               <th>Date</th>
               <th>Moola used for</th>
@@ -66,6 +133,7 @@ const TableComponent = () => {
               <th>Account</th>
             </tr>
           </thead>
+
           <tbody>
             {displayedTransactions.map((transaction, index) => (
               <tr key={index}>
@@ -73,8 +141,14 @@ const TableComponent = () => {
                 <td className="moola-column">{transaction.moola}</td>
                 <td>{formatAmount(transaction.amount)}</td>
                 <td>
-                  <span className={`pocket-text ${getPocketClass(transaction.pocket)}`}>
-                    <span className={`pocket-indicator pocket-${transaction.pocket.toLowerCase()}`}></span>
+                  <span
+                    className={`pocket-text ${getPocketClass(
+                      transaction.pocket
+                    )}`}
+                  >
+                    <span
+                      className={`pocket-indicator pocket-${transaction.pocket.toLowerCase()}`}
+                    ></span>
                     {transaction.pocket}
                   </span>
                 </td>

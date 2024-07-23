@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         chillax: ['Chillax', 'sans-serif'],
+        inter:['Inter', 'sans-serif'],
+        'clash-display': ['"Clash Display"', 'sans-serif'],
+
       },
       fontSize: {
         'custom-large': '38px',

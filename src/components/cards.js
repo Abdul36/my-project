@@ -16,7 +16,7 @@ const Cards = () => {
         <div className="text-white px-6 py-4">
           <div className="flex items-center">
             <h1 className="text-xl font-semibold font-chillax">moola</h1>
-            <p className="ml-auto">Last update: 5 mins ago</p>
+            <p className="ml-auto cursor-pointer"><u>Hide Details</u> </p>
           </div>
         </div>
 
@@ -24,22 +24,15 @@ const Cards = () => {
         <div className="px-6 py-4">
           <div className="mb-4">
             <h4 className="text-gray-100">Total Account Balance</h4>
-            <h2 className="text-2xl font-bold text-white">$36,400 USD</h2>
+            <h2 className="text-2xl font-bold text-white">$36,400</h2>
           </div>
 
           <div className="flex mb-4">
-            <div>
-              <p className="text-white">Cardholder Name</p>
-              <h4 className="font-semibold text-white">JENNIFER SMITH</h4>
-            </div>
-            <div className="ml-10">
-              <p className="text-white">Expiry Date</p>
-              <h4 className="font-semibold text-white">02/27</h4>
-            </div>
+            <p className="text-white font-inter">Last updated 5 mins ago</p>
           </div>
 
           {/* Budget section */}
-          <div className="shadow-lg bg-custom-purple p-2 rounded">
+          <div className="shadow-lg bg-custom-purple p-2 rounded font-inter">
             <div className="mb-4 flex justify-between items-center">
               <div className="text-white">Monthly Budget</div>
               <div className="text-white">30%</div>

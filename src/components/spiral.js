@@ -36,6 +36,7 @@ class RadialBarChart extends React.Component {
               useSeriesColors: true,
               offsetX: 8,
               fontSize: '16px',
+              fontFamily: 'Inter, sans-serif', 
               formatter: function(seriesName, opts) {
                 return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
               },
