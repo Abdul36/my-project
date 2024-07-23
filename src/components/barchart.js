@@ -25,8 +25,8 @@ const BarChart = () => {
       offsetY: -10, // Move labels inside the bars
       style: {
         fontSize: "12px",
-        colors: ["#000"], // Color of the data labels
-        fontFamily: "Inter, sans-serif", // Added fontFamily
+        colors: ["#28a745", "#dc3545"], // Color of the data labels for each series
+        fontFamily: "Inter, sans-serif", // Font family for data labels
       },
     },
     xaxis: {
@@ -54,7 +54,6 @@ const BarChart = () => {
         style: {
           fontFamily: "Inter, sans-serif", // Added fontFamily
         },
-      
       },
     },
     colors: ["#28a745", "#dc3545"], // Green for Value 1, Red for Value 2
