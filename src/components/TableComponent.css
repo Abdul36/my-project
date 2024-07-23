@@ -1,7 +1,14 @@
-/* TableComponent.css */
-
-/* Styles for pocket types */
-.pocket-text {
+/* Styles for amount values */
+.amount-positive {
+    color: green;
+  }
+  
+  .amount-negative {
+    color: red;
+  }
+  
+  /* Styles for pocket types */
+  .pocket-text {
     display: flex;
     align-items: center;
   }
@@ -53,3 +60,47 @@
     overflow-y: auto;
   }
   
+  /* Remove the border of the AG Grid container */
+  .ag-theme-alpine {
+    border: none;
+  }
+  
+  /* Remove border around the header and cells */
+  .ag-header,
+  .ag-cell {
+    border: none !important;
+  }
+  
+  /* Ensure the table container does not have an outline */
+  .table-container {
+    outline: none;
+  }
+  
+  /* Optional: Adjust styling for a clean look */
+  .ag-header-cell {
+    border-bottom: 1px solid #ddd; /* Optional: Adds a subtle line between header cells */
+  }
+  
+  .ag-cell {
+    border-bottom: 1px solid #eee; /* Optional: Adds a subtle line between rows */
+  }
+  /* Styles for the pocket types */
+.pocket-credit {
+    color: #007bff; /* Blue color for Credit */
+    background-color: #e7f0ff; /* Light blue background for Credit */
+}
+
+.pocket-dining {
+    color: #fd7e14; /* Orange color for Dining */
+    background-color: #fff4e5; /* Light orange background for Dining */
+}
+
+.pocket-travel {
+    color: #20c997; /* Teal color for Travel */
+    background-color: #e6fffa; /* Light teal background for Travel */
+}
+
+.pocket-debit {
+    color: #dc3545; /* Red color for Debit */
+    background-color: #f8d7da; /* Light red background for Debit */
+}

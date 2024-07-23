@@ -42,7 +42,7 @@ const Cards = () => {
               {/* Progress bar */}
               <div className="bg-gray-200 h-2 rounded-full">
                 <div
-                  className="bg-sky-400 h-full rounded-full"
+                  className="bg-[#2FFEFE] h-full rounded-full"
                   style={{ width: `${budgetPercentage}%` }}
                 ></div>
               </div>

@@ -12,6 +12,9 @@ module.exports = {
         'clash-display': ['"Clash Display"', 'sans-serif'],
 
       },
+      screens: {
+        'sm-890': '890px',
+      },
       fontSize: {
         'custom-large': '38px',
       },

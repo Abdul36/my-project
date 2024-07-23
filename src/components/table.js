@@ -9,200 +9,75 @@ const TableComponent = () => {
 
   // Function to format amount values
   const formatAmount = (amount) => {
+    let amountClass = '';
+
     if (amount.startsWith('+')) {
-      return <span style={{ color: 'green' }}>{amount}</span>;
+      amountClass = 'amount-positive';
     } else if (amount.startsWith('-')) {
-      return <span style={{ color: 'red' }}>{amount}</span>;
+      amountClass = 'amount-negative';
     }
-    return <span>{amount}</span>; // Ensure consistent styling
+
+    return <span className={amountClass}>{amount}</span>;
   };
 
-  // Function to get the CSS class for each pocket type
-  const getPocketClass = (pocket) => {
-    switch (pocket) {
-      case 'Credit':
-        return 'pocket-credit';
-      case 'Dining':
-        return 'pocket-dining';
-      case 'Travel':
-        return 'pocket-travel';
-      case 'Debit':
-        return 'pocket-debit';
-      default:
-        return '';
-    }
-  };
+  // // Function to get the CSS class for each pocket type
+  // const getPocketClass = (pocket) => {
+  //   switch (pocket) {
+  //     case 'Credit':
+  //       return 'pocket-credit';
+  //     case 'Dining':
+  //       return 'pocket-dining';
+  //     case 'Travel':
+  //       return 'pocket-travel';
+  //     case 'Debit':
+  //       return 'pocket-debit';
+  //     default:
+  //       return '';
+  //   }
+  // };
+  // Function to get the style for each pocket type
+const getPocketClass = (pocket) => {
+  switch (pocket) {
+    case 'Credit':
+      return { color: '#007bff', backgroundColor: '#e7f0ff' }; // Blue text, light blue background
+    case 'Dining':
+      return { color: '#fd7e14', backgroundColor: '#fff4e5' }; // Orange text, light orange background
+    case 'Travel':
+      return { color: '#20c997', backgroundColor: '#e6fffa' }; // Teal text, light teal background
+    case 'Debit':
+      return { color: '#dc3545', backgroundColor: '#f8d7da' }; // Red text, light red background
+    default:
+      return { color: 'black', backgroundColor: 'transparent' }; // Default styles
+  }
+};
 
   // Sample transactions data
   const transactions = [
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change",
-      amount: "-$70.25",
-      pocket: "Travel",
-      account: "Main",
-    },
-    {
-      date: "01-14-2024",
-      moola: "Spare Change Saved!",
-      amount: "-$500.50",
-      pocket: "Debit",
-      account: "Main",
-    },
+    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dinning", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+
     // Add more transactions as needed
   ];
 
@@ -248,7 +123,7 @@ const TableComponent = () => {
           </h4>
         </div>
       </div>
-      <div className="ag-theme-alpine table-container" style={{ width: '100%' }}>
+      <div className="ag-theme-alpine table-container font-inter" style={{ width: '100%' }}>
         <AgGridReact
           rowData={displayedTransactions}
           columnDefs={columns}
