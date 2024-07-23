@@ -15,8 +15,8 @@ class RadialBarChart extends React.Component {
         plotOptions: {
           radialBar: {
             offsetY: 0,
-            startAngle: -180,
-            endAngle: 180,
+            startAngle: 0,
+            endAngle: 360,
             hollow: {
               margin: 5,
               size: '30%',
@@ -30,6 +30,7 @@ class RadialBarChart extends React.Component {
                 show: false,
               },
             },
+            barWidth: '15%', // Adjust the width of the radial lines (default is 10%)
             barLabels: {
               enabled: true,
               useSeriesColors: true,
@@ -40,7 +41,7 @@ class RadialBarChart extends React.Component {
                 return `${seriesName}: ${opts.w.globals.series[opts.seriesIndex]}`;
               },
               style: {
-                transform: 'rotate(-90  deg)', 
+                transform: 'rotate(-90deg)', 
                 textAlign: 'center',
                 whiteSpace: 'nowrap',
               },

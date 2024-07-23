@@ -9,8 +9,10 @@ const LineChart = () => {
       zoom: {
         enabled: false,
       },
+      toolbar: {
+        show: false, // Disable the toolbar including the download menu
+      },
       contextmenu: {
-        // Disable context menu
         enabled: false,
       },
     },
@@ -19,20 +21,21 @@ const LineChart = () => {
     },
     stroke: {
       curve: "smooth",
-      width: 10,
+      width: 8, // Adjust the line width as needed
+      colors: ['yellow'], // Set to transparent to use gradient fill
     },
     fill: {
       type: 'gradient',
       gradient: {
         shade: 'light',
-        type: "horizontal",
+        type: 'horizontal',
         shadeIntensity: 1,
-        gradientToColors: ['#72E270', '#F1E91B', '#F56565', '#FCCACA'],
+        gradientToColors: [ '#71E26F','#72E270','#F1E91B','#F56565','#FCCACA'], // Gradient colors
         inverseColors: false,
         opacityFrom: 1,
         opacityTo: 1,
-        stops: [0, 38.6, 68.96, 86.31, 107.21]
-      }
+        stops: [0, 50, 100],
+      },
     },
     grid: {
       row: {
@@ -65,7 +68,7 @@ const LineChart = () => {
       axisBorder: {
         show: true,
         color: '#000000', // Color of the y-axis border
-        width: 2, // Thickness of the y-axis border
+        width: 0, // Thickness of the y-axis border
       },
       axisTicks: {
         show: true,

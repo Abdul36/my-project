@@ -1,5 +1,6 @@
 import React from "react";
 import Multiple from "./cardss"; // Assuming you have renamed the import from "./cardss" to "./Multiple"
+import './Multiple.css'; // Import CSS file for styling
 const gradientStyle = {
   background: 'linear-gradient(62.44deg, #1D0CB6 -42.93%, #7466F5 -42.92%, #B480FF 47.91%, #F0B3FF 138.75%)',
 };
@@ -11,7 +12,7 @@ const Cards = () => {
   return (
     <div className="flex flex-col lg:flex-row items-start justify-between">
       {/* Card Container */}
-      <div className="w-full lg:w-1/3 bg-purple-500 rounded-lg overflow-hidden shadow-lg mt-8" style={gradientStyle}>
+      <div className="cars w-full lg:w-1/3  rounded-lg overflow-hidden shadow-lg mt-8" style={gradientStyle}>
         {/* Card header */}
         <div className="text-white px-6 py-4">
           <div className="flex items-center">
@@ -28,11 +29,11 @@ const Cards = () => {
           </div>
 
           <div className="flex mb-4">
-            <p className="text-white font-inter">Last updated 5 mins ago</p>
+            <p className="text-white font-inter">Last updated : 5 mins ago</p>
           </div>
 
           {/* Budget section */}
-          <div className="shadow-lg bg-custom-purple p-2 rounded font-inter">
+          <div className="shadow-lg bg-[#6C33BF99] p-2 rounded font-inter">
             <div className="mb-4 flex justify-between items-center">
               <div className="text-white">Monthly Budget</div>
               <div className="text-white">30%</div>

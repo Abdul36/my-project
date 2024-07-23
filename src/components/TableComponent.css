@@ -1,85 +1,55 @@
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+/* TableComponent.css */
 
-.styled-table th,
-.styled-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.styled-table th {
-    background-color: #f4f4f4;
-}
-
-.styled-table tbody tr:nth-child(even) {
-    background-color: #f4f4f4; /* Same background color as th */
-}
-
-.positive-value {
-    color: green;
-}
-
-.negative-value {
-    color: red;
-}
-
+/* Styles for pocket types */
 .pocket-text {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding: 2px 8px;
-    border-radius: 10px; /* Same as indicator radius */
-}
-
-.pocket-indicator {
-    width: 10px;
-    height: 10px;
+  }
+  
+  .pocket-credit {
+    color: #007bff; /* Blue color for Credit */
+  }
+  
+  .pocket-dining {
+    color: #fd7e14; /* Orange color for Dining */
+  }
+  
+  .pocket-travel {
+    color: #20c997; /* Teal color for Travel */
+  }
+  
+  .pocket-debit {
+    color: #dc3545; /* Red color for Debit */
+  }
+  
+  /* Styles for the pocket indicator */
+  .pocket-indicator {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    margin-right: 8px;
-}
-
-.pocket-credit {
-    background-color: #4caf50; /* Green for Credit */
-    color: #4caf50;
-}
-
-.pocket-dining {
-    background-color: #6372EB; /* Orange for Dining */
-    color: #6372EB;
-}
-
-.pocket-travel {
-    background-color: #FEBF2D; /* Blue for Travel */
-    color: #FEBF2D;
-}
-
-.pocket-debit {
-    background-color: #f44336; /* Red for Debit */
-    color: #f44336;
-}
-
-/* Add shaded backgrounds */
-.pocket-credit-shaded {
-    background-color: #ECFDF3; /* Shaded green */
-}
-
-.pocket-dining-shaded {
-    background-color: #E8EAFC; /* Shaded orange */
-}
-
-.pocket-travel-shaded {
-    background-color: #FFF7E6; /* Shaded blue */
-}
-
-.pocket-debit-shaded {
-    background-color: #FEF3F2; /* Shaded red */
-}
-
-/* Change text color for specific columns */
-.date-column,
-.moola-column,
-.account-column {
-    color: #64698E;
-}
+    margin-right: 4px;
+    display: inline-block;
+  }
+  
+  .pocket-credit .pocket-indicator {
+    background-color: #007bff;
+  }
+  
+  .pocket-dining .pocket-indicator {
+    background-color: #fd7e14;
+  }
+  
+  .pocket-travel .pocket-indicator {
+    background-color: #20c997;
+  }
+  
+  .pocket-debit .pocket-indicator {
+    background-color: #dc3545;
+  }
+  
+  /* Style for the table container to enable scrolling */
+  .table-container {
+    max-height: 34vh;
+    overflow-y: auto;
+  }
+  

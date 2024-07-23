@@ -26,3 +26,12 @@
     display: none; /* Hide scrollbar buttons */
   }
   
+
+  .cars {
+    background-image: url ();
+  
+  }
+  /* TableComponent.css or your custom CSS file */
+.custom-ag-theme .ag-root-wrapper {
+  border: none; /* Remove the border around the grid */
+}
