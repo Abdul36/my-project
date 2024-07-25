@@ -1,37 +1,46 @@
 /* Multiple.css */
 
 .overflow-auto {
-    scrollbar-width: thin; /* "auto" or "thin" depending on your browser support */
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: #8a2be2; /* Purple color for track */
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: #f1f1f1; /* Thumb color */
-    border-radius: 6px; /* Rounded corners */
-    border: 2px solid #e42f0f; /* Border around thumb */
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background-color: #ccc; /* Thumb color on hover */
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-button {
-    display: none; /* Hide scrollbar buttons */
-  }
-  
-
-  .cars {
-    background-image: url ();
-  
-  }
-  /* TableComponent.css or your custom CSS file */
-.custom-ag-theme .ag-root-wrapper {
-  border: none; /* Remove the border around the grid */
+  scrollbar-width: thin; /* "auto" or "thin" depending on your browser support */
 }
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #8a2be2; /* Purple color for track */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1; /* Thumb color */
+  border-radius: 6px; /* Rounded corners */
+  border: 2px solid #e42f0f; /* Border around thumb */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc; /* Thumb color on hover */
+}
+
+.scrollbar-thin::-webkit-scrollbar-button {
+  display: none; /* Hide scrollbar buttons */
+}
+
+
+.cars {
+  background-image: url('/src/images/balance_card_background.svg'),
+url('/src/images/balance_card_background.svg'),linear-gradient(62.44deg, #1D0CB6 -42.93%, #7466F5 -42.92%, #B480FF 47.91%, #F0B3FF 138.75%);
+background-repeat: no-repeat, no-repeat;
+background-position:
+  top left,
+  bottom 45px right;
+background-size: auto, auto;
+
+
+}
+/* TableComponent.css or your custom CSS file */
+.custom-ag-theme .ag-root-wrapper {
+border: none; /* Remove the border around the grid */
+}
+
+

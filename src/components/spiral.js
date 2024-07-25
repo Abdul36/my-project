@@ -32,7 +32,7 @@ class RadialBarChart extends React.Component {
             },
             barWidth: '15%', // Adjust the width of the radial lines (default is 10%)
             barLabels: {
-              enabled: true,
+              enabled: false,
               useSeriesColors: true,
               offsetX: 8,
               fontSize: '16px',
@@ -80,6 +80,12 @@ class RadialBarChart extends React.Component {
             },
           },
         }],
+        tooltip: {
+          enabled: true,
+          formatter: function(value) {
+            return value;
+          },
+        },
       }
     };
   }

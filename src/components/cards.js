@@ -12,7 +12,7 @@ const Cards = () => {
   return (
     <div className="flex flex-col lg:flex-row items-start justify-between">
       {/* Card Container */}
-      <div className="cars w-full lg:w-1/3  rounded-lg overflow-hidden shadow-lg mt-8" style={gradientStyle}>
+      <div className="cars  w-full lg:w-1/3  rounded-lg overflow-hidden shadow-lg mt-8" >
         {/* Card header */}
         <div className="text-white px-6 py-4">
           <div className="flex items-center">

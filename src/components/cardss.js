@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { MdOutlineSportsRugby, MdShoppingBag,MdLocalGroceryStore  } from "react-icons/md";
+import { MdOutlineSportsRugby, MdShoppingBag, MdLocalGroceryStore } from "react-icons/md";
 import { TbBus, TbCar, TbBike, TbTicket } from 'react-icons/tb';
 import './Multiple.css'; // Import CSS file for styling
 
 const cardData = [
-  { icon: '🚃', text: 'Transport', price: '$47000' },
+  { icon: <TbBus size={30} color="blue" />, text: 'Travel', price: '$22000' },
   { icon: <MdShoppingBag size={30} color="purple" />, text: 'Shopping', price: '$32000' },
   { icon: <TbTicket size={30} color="orange" />, text: 'Tickets', price: '$50000' },
   { icon: <MdOutlineSportsRugby size={30} color="gray" />, text: 'Sports', price: '$850.00' },
-  { icon: <MdLocalGroceryStore  size={30} color="green" />, text: 'Groceries', price: '$50000' },
+  { icon: <MdLocalGroceryStore size={30} color="green" />, text: 'Groceries', price: '$50000' },
   // Add additional cards here
   { icon: <TbBus size={30} color="blue" />, text: 'Travel', price: '$22000' },
   { icon: <TbBike size={30} color="green" />, text: 'Cycling', price: '$15000' },
@@ -53,10 +53,10 @@ const Multiple = () => {
             {showAll ? 'View Less' : 'View All'}
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-1 gap-y-2 pt-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-1 gap-y-2 pt-5">
           {/* Render the specified number of cards */}
           {cardData.slice(0, cardsToShow).map((card, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md relative w-full md:w-70">
+            <div key={index} className="bg-white rounded-lg shadow-md relative w-[94%] md:w-50">
               <div className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">

@@ -30,7 +30,7 @@ const LineChart = () => {
         shade: 'light',
         type: 'horizontal',
         shadeIntensity: 1,
-        gradientToColors: [ '#71E26F','#72E270','#F1E91B','#F56565','#FCCACA'], // Gradient colors
+        gradientToColors: ['#71E26F', '#72E270', '#F1E91B', '#F56565', '#FCCACA'], // Gradient colors
         inverseColors: false,
         opacityFrom: 1,
         opacityTo: 1,
@@ -38,24 +38,21 @@ const LineChart = () => {
       },
     },
     grid: {
-      row: {
-        colors: ["#f3f3f3", "transparent"], // alternating background colors
-        opacity: 0.5,
+      show: true, // Enable the grid lines
+      xaxis: {
+        lines: {
+          show: true, // Show vertical lines (columns)
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false, // Hide horizontal lines (rows)
+        },
       },
     },
     xaxis: {
       categories: [
-        "0",
-        "5",
-        "10",
-        "15",
-        "20",
-        "25",
-        "30",
-        "35",
-        "40",
-        "45",
-        "50",
+        "0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50",
       ],
     },
     yaxis: {
@@ -66,7 +63,7 @@ const LineChart = () => {
         show: false, // Hide y-axis labels
       },
       axisBorder: {
-        show: true,
+        show: false,
         color: '#000000', // Color of the y-axis border
         width: 0, // Thickness of the y-axis border
       },

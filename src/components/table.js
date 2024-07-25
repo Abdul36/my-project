@@ -39,14 +39,21 @@ const TableComponent = () => {
   // Sample transactions data
   const transactions = [
     { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dining", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
     { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dining", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+
     { date: "01-14-2024", moola: "Uber Eats", amount: "+$70.25", pocket: "Credit", account: "Main" },
+    { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Dining", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change", amount: "-$70.25", pocket: "Travel", account: "Main" },
     { date: "01-14-2024", moola: "Spare Change Saved!", amount: "+$500.50", pocket: "Debit", account: "Main" },
+
+
+
     // Add more transactions as needed
   ];
 
@@ -61,16 +68,25 @@ const TableComponent = () => {
       headerName: 'Amount',
       field: 'amount',
       cellRendererFramework: (params) => formatAmount(params.value),
+      cellClassRules: {
+        'amount-positive': (params) => params.value.startsWith('+'),
+        'amount-negative': (params) => params.value.startsWith('-')
+      }
     },
     {
       headerName: 'Pocket',
       field: 'pocket',
       cellRendererFramework: (params) => (
-        <span className={`pocket-text ${getPocketClass(params.value)}`}>
-          <span className="pocket-indicator"></span>
+        <span style={getPocketClass(params.value)}>
           {params.value}
         </span>
       ),
+      cellClassRules: {
+        'green-cell': (params) => params.value === 'Credit',
+        'red-cell': (params) => params.value === 'Debit',
+        'yellow-cell': (params) => params.value === 'Travel',
+        'purple-cell': (params) => params.value === 'Dining'
+      }
     },
     { headerName: 'Account', field: 'account' },
   ];
@@ -84,7 +100,7 @@ const TableComponent = () => {
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-bold font-clash-display mb-2  ">Recent Transactions</h2>
+          <h2 className="text-lg font-bold font-clash-display mb-2">Recent Transactions</h2>
         </div>
         <div className="font-inter">
           <h4 onClick={handleViewAll} className="cursor-pointer text-[#6200EE]">
