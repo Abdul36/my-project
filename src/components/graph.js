@@ -21,7 +21,7 @@ const LineChart = () => {
     },
     stroke: {
       curve: "smooth",
-      width: 8, // Adjust the line width as needed
+      width: 13, // Adjust the line width as needed
       colors: ['yellow'], // Set to transparent to use gradient fill
     },
     fill: {

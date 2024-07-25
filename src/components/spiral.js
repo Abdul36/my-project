@@ -7,10 +7,21 @@ class RadialBarChart extends React.Component {
 
     this.state = {
       series: [60, 76, 67, 61, 80],
+      selectedValue: null,
       options: {
         chart: {
           height: 390,
           type: 'radialBar',
+          events: {
+            dataPointMouseEnter: (event, chartContext, config) => {
+              const index = config.dataPointIndex;
+              const value = this.state.series[index];
+              this.setState({ selectedValue: value });
+            },
+            dataPointMouseLeave: () => {
+              this.setState({ selectedValue: null });
+            }
+          }
         },
         plotOptions: {
           radialBar: {
@@ -30,47 +41,33 @@ class RadialBarChart extends React.Component {
                 show: false,
               },
             },
-            barWidth: '15%', // Adjust the width of the radial lines (default is 10%)
-            barLabels: {
-              enabled: false,
-              useSeriesColors: true,
-              offsetX: 8,
-              fontSize: '16px',
-              fontFamily: 'Inter, sans-serif',
-              formatter: (seriesName, opts) => {
-                return `${seriesName}: ${opts.w.globals.series[opts.seriesIndex]}`;
-              },
-              style: {
-                transform: 'rotate(-90deg)', 
-                textAlign: 'center',
-                whiteSpace: 'nowrap',
-              },
-            },
+            barWidth: '15%',
           },
         },
         colors: ['#6372EB', '#23CCF8', '#17B26A', '#FD9A27', '#23CCF8'],
         labels: ['Other $700.98', 'Market $6,500', 'Food $644.22', 'Grocery $450.55', 'Transport $300'],
         annotations: {
-          points: [{
-            x: 50,
-            y: 50,
+          position: 'back',
+          points: this.state.selectedValue !== null ? [{
+            x: '50%',
+            y: '50%',
             marker: {
               size: 0,
             },
             label: {
               borderColor: '#FF4560',
               borderWidth: 1,
-              text: 'Start',
+              text: `Value: ${this.state.selectedValue}`,
               textAnchor: 'middle',
               offsetX: 0,
-              offsetY: 10,
+              offsetY: 0,
               style: {
-                fontSize: '12px',
+                fontSize: '16px',
                 color: '#FF4560',
                 background: 'transparent',
               },
             },
-          }],
+          }] : [],
         },
         responsive: [{
           breakpoint: 480,
@@ -80,12 +77,6 @@ class RadialBarChart extends React.Component {
             },
           },
         }],
-        tooltip: {
-          enabled: true,
-          formatter: function(value) {
-            return value;
-          },
-        },
       }
     };
   }
