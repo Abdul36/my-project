@@ -84,7 +84,7 @@ const Product = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col py-5 px-[40px] h-[135%] bg-[#EAECF0] ml-0 lg:ml-72 ">
+      <div className="flex-1 flex flex-col py-5 px-[40px] h-[140%] bg-[#EAECF0] ml-0 lg:ml-72 ">
         <Header />
         <Cards />
         <Two />
